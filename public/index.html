@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+
+<body class="container lead ">
+  <p class="text-light text-end">בס''ד</p>
+  <h1 class="my-5 display-2 text-center text-info">Toys API Documentation!</h1>
+  <div class="my-5 accordion accordion-flush" id="accordionFlushExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingFive">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+          Every Get request (GET) </button>
+      </h2>
+      <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <ul>
+            <li>
+              <h2 class="inAccordion"> Search</h2> Use the following URL: <br>http://Domain/toys/search/?s= <br> use this get request to
+              search a toy/s by the name or information
+            </li>
+            <li class="my-1">
+              <h2 class="inAccordion"> Price range</h2>
+              use this request to get toys in between minimum and maximum range price you inserted (replace your values
+              where the ** are displayed): <BR>
+              Use the following URL: <br>http://Domain/toys/prices/?min=*MININUM-VALUE*&max=*MAXIMUM-VALUE*
+            </li>
+            <li class="my-1">
+              <h2 class="inAccordion"> By page</h2>
+              use this request to get toys in your requested page you inserted: (replace
+              your page number where the ** are displayed) <br>Use the following URL: <br>http://Domain/toys/?page=*NUMBER*
+            </li>
+            <li class="my-1">
+              <h2 class="inAccordion"> By category</h2>
+              Use this request to search a category of toys you want: (replace
+              the category you are looking for where the ** are displayed) <br>Use the following URL: <br>http://Domain/toys/cat/*CATEGORY*
+            </li>
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingFour">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+          Add new toy - Token required! (POST)
+        </button>
+      </h2>
+      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">Add a new product - must register first and login and have a token to send this
+          request. (POST) <br>Use the following URL: <br>http://Domain/toys
+
+          <ul>
+            <li>name -Mandatory, must be filled with a string</li>
+            <li> info -Mandatory, must be filled with a string</li>
+            <li> category -Mandatory, must be filled with a string</li>
+            <li> img_url -Can be sent empty, or be filled with a string.</li>
+            <li> price -Mandatory, must be filled with a number</li>
+          </ul>
+          <h3>Here is an example of how a post request of new toy looks like(Must have a token): </h3>
+
+          <p class="lead"> {<br>
+            "name":"Crayola Color Wonder Magic Light Brush, Mess Free Painting, Gift for Kids, 3, 4, 5, 6",<br>
+            "info":"Painting is magical with the Color Wonder Magic Light Brush Though Color Wonder Paints are clear,
+            the brush lights up to indicate the color Color Wonder Paints are mess-free and only appear on special Color
+            Wonder Paper, not on skin, clothing, or walls. So kids can explore the joy of painting and moms can let them
+            create without worry Makes a great holiday or birthday gift for kids ages 3 and up (Clearance)",
+            <br> "category":"Storytelling",
+            <br> "price":29.99,
+            <br>"img_url":"https://slimages.macysassets.com/is/image/MCY/products/1/optimized/18288871_fpx.tif" <br>
+            }
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingSix">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+          Edit product - Token is required! (PUT) </button>
+      </h2>
+      <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">
+          <h4 class="inAccordion"> Edit a toy </h4>
+          <p>Here you can update a toy while using a PUT request-the token must be matching with the toy in order to update.
+            <br> (replace
+            the toys' ID where the ** are displayed)
+          </p>
+          <br>Use the following URL: <br>http://Domain/toys/*ID*
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingOne">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+          Delete product - Token is required! (DELETE) </button>
+      </h2>
+      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">Delete a toy with token, only a registered and logged in user can delete his own toy
+          from the database.Need to send delete request and the toy's id  (replace
+          the toys' ID where the ** are displayed): /<br>
+          Use the following URL: <br>http://Domain/toys/*ID*
+          <br> If done correctly, the response will be displayed as such : <br>
+          {
+          "acknowledged": true,<br>
+          "deletedCount": 1
+          }
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingTwo">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+          Sign up (POST)</button>
+      </h2>
+      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">Here you can send a post request to sign up for the website. <br> 
+          Use the following URL: <br>http://Domain/users/signup <br>
+
+          You must send mandatory 3 parameters:
+          <ol>
+            <li>Name: "String" *required*</li>
+            <li>Email: "String" *required*</li>
+            <li>Password: "String" *required*</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="flush-headingThree">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+          Log in / Sign in (POST) </button>
+      </h2>
+      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree"
+        data-bs-parent="#accordionFlushExample">
+        <div class="accordion-body">Use this post request to get an access for adding a new toy, and to edit or delete a
+          toy you inserted. <br> Use the following URL: <br>http://Domain/users/login <br>
+          Instructions:
+          You must send mandatory 2 parameters:
+          <ol>
+            <li>Email: "String" *required*</li>
+            <li>Password: "String" *required*</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</html>

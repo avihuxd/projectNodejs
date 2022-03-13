@@ -1,0 +1,18 @@
+body{
+font-weight: bolder !important;
+background: rgb(2,0,36);
+background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(25,25,98,1) 50%, rgba(0,94,113,1) 100%);
+}
+
+.collapsed{
+    background: rgba(225, 250, 0, 0.432);
+}
+
+.accordion-collapse{
+    background: rgba(0, 193, 252, 0.514);
+}
+
+.inAccordion{
+color: red;
+font-size: 1.2em !important;
+}
